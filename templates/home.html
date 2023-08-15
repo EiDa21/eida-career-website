@@ -7,7 +7,7 @@
         font-size: 40px;
         font-family: Roboto;
         font-weight: normal;
-        color: rbg(100, 100, 100);
+        color: rbg(100, 0, 0);
         text-align: center;
       }
 
@@ -21,13 +21,13 @@
         font-size: 40px;
         font-family: Roboto;
         font-weight:normal;
-        color: rbg(80, 80, 80);
+        color: rbg(80, 0, 0);
         text-align: center;
       }
       
       .bodyText{
         font-family: Roboto;
-        color: rbg(100, 80, 80);
+        color: rbg(80, 0, 0);
       }
       #container{
         max-width: 720px;
@@ -37,12 +37,16 @@
   </head>
   <body>
      <div id= "container">
-    <h1> Jovian Careers</h1>
+    <h1> {{company_name}} Careers</h1>
     <img id= "banner"src= "https://eida-career-website--eida21.repl.co/static/Banner2.jpeg", height= 320 >
     <h2>About Jovian</h2>
     <p class="bodyText">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quam vulputate dignissim suspendisse in est ante in nibh mauris. Ultricies leo integer malesuada nunc. Elit ullamcorper dignissim cras tincidunt lobortis. Risus feugiat in ante metus dictum. Dolor purus non enim praesent elementum facilisis leo vel fringilla. Amet mauris commodo quis imperdiet massa tincidunt nunc. Tristique senectus et netus et malesuada. Senectus et netus et malesuada fames ac. Neque vitae tempus quam pellentesque nec nam aliquam sem et. Sit amet est placerat in. Ut consequat semper viverra nam libero justo. Ligula ullamcorper malesuada proin libero nunc consequat interdum varius. Mauris sit amet massa vitae tortor condimentum lacinia. Dictum fusce ut placerat orci nulla pellentesque dignissim enim.</p>
     <h2>Open Positions</h2>
-    <p class="bodyText">TODO Show the jobs here</p>
+       <div>
+          {% for job in jobs %}
+            {% include 'jobItem.html' %}
+          {% endfor %}
+       </div>
        <div style="text-align:center;">
     <button>Contact Us</button>
          <p>Copyright, 2022 Jovian</p>
